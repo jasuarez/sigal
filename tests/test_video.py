@@ -61,3 +61,21 @@ def test_generate_video_dont_enlarge(tmpdir):
     size_dst = video_size(dstfile)
 
     assert size_src == size_dst
+
+def test_generate_video_passthrough(tmpdir):
+    """Test the generate_video function with use_orig=True"""
+
+    base, ext = os.path.splitext(TEST_VIDEO)
+    # The function will return the real dstfile
+    dstfile = str(tmpdir.join(base + '.webm'))
+    expected_dstfile = str(tmpdir.join(TEST_VIDEO))
+    settings = create_settings(video_size=(100, 50), use_orig=True)
+    dstfile = generate_video(SRCFILE, dstfile, settings)
+
+    assert dstfile == expected_dstfile
+
+    st_src = os.stat(SRCFILE)
+    st_dst = os.stat(dstfile)
+    # Check fthe file was copied, not (sym)linked
+    assert st_src.st_size == st_dst.st_size
+    assert not os.path.samestat(st_src, st_dst)
