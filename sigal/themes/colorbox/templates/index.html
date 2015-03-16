@@ -110,7 +110,7 @@
                   data-href="#{{ media.filename|replace('.', '')|replace(' ', '') }}"
                 {% else %}
                 <a href="#{{ media.filename|replace('.', '')|replace(' ', '') }}"
-                  class="gallery" inline='yes' title="{{ media.filename }}"
+                  class="gallery" inline='yes' title="{{ media.title if media.title else media.filename }}"
                 {% endif %}
                   {% if media.big %} data-big="{{ media.big }}"{% endif %}>
                   <img src="{{ media.thumbnail }}" alt="{{ media.filename }}"
