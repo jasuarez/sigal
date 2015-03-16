@@ -99,6 +99,7 @@
               {% endif %}
                 <img src="{{ media.thumbnail }}" alt="{{ media.filename }}"
                     title="{{ media.title if media.title else media.filename }}" /></a>
+              <span class="media_title">{{ media.title }}</span>
             </div>
             {% endif %}
             {% if media.type == "video" %}
@@ -115,6 +116,7 @@
                   {% if media.big %} data-big="{{ media.big }}"{% endif %}>
                   <img src="{{ media.thumbnail }}" alt="{{ media.filename }}"
                       title="{{ media.title if media.title else media.filename }}" /></a>
+              <span class="media_title">{{ media.title }}</span>
               </div>
               <!-- This contains the hidden content for the video -->
               <div style='display:none'>
