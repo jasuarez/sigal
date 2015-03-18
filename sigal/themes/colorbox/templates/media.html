@@ -73,7 +73,7 @@
             {% endif %}
             {% if media.type == "video" %}
               <div class="twelve columns thumbnail">
-                <video controls>
+                <video {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}" {% endif %}controls>
                 <source src='{{ media.filename }}' type='video/webm' />
                 </video>
               </div>

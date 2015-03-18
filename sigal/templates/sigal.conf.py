@@ -114,6 +114,14 @@ ignore_directories = []
 ignore_files = []
 
 # -------------
+# Video options
+# -------------
+
+# How videos should be preloaded when page is loaded.
+# Valid values are 'auto', 'metadata' or 'none'
+# videoplay_preload = ''
+
+# -------------
 # Miscellaneous
 # -------------
 
