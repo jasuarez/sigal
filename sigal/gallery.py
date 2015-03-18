@@ -181,6 +181,8 @@ class Video(Media):
         self.src_filename = filename
         self.filename = self.url = base + '.webm'
         self.dst_path = join(settings['destination'], path, base + '.webm')
+        if settings['videoplay_size']:
+            self.width, self.height = settings['videoplay_size']
 
 
 class Album(UnicodeMixin):
