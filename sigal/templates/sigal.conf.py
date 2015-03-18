@@ -117,6 +117,9 @@ ignore_files = []
 # Video options
 # -------------
 
+# Define the poster to be shown for the video. Default is none.
+# videoplay_poster = ''
+
 # How videos should be preloaded when page is loaded.
 # Valid values are 'auto', 'metadata' or 'none'
 # videoplay_preload = ''

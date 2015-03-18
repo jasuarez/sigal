@@ -66,6 +66,7 @@ _DEFAULT_CONFIG = {
     'title': '',
     'use_orig': False,
     'video_size': (480, 360),
+    'videoplay_poster': '',
     'videoplay_preload': '',
     'watermark': '',
     'webm_options': ['-crf', '10', '-b:v', '1.6M',
