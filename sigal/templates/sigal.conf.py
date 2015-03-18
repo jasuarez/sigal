@@ -124,6 +124,9 @@ ignore_files = []
 # Valid values are 'auto', 'metadata' or 'none'
 # videoplay_preload = ''
 
+# Size for the videos to be displayed. Example, videoplay_size = (800, 600)
+# videoplay_size = ''
+
 # -------------
 # Miscellaneous
 # -------------

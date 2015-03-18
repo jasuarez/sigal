@@ -123,7 +123,9 @@
                 <div id="{{ media.filename|replace('.', '')|replace(' ', '') }}">
                   <video
                     {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}"{% endif %}
-                    {%if settings.videoplay_poster %} poster="{{ album.index_url }}{{ settings.videoplay_poster }}"{% endif %}
+                    {% if settings.videoplay_poster %} poster="{{ album.index_url }}{{ settings.videoplay_poster }}"{% endif %}
+                    {% if media.width %} width="{{ media.width }}"{% endif %}
+                    {% if media.height %} height="{{ media.height }}"{% endif %}
                     controls>
                   <source src='{{ media.filename }}' {% if not settings.use_orig %}type='video/webm'{% endif %} />
                   </video>
