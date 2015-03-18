@@ -121,8 +121,11 @@
               <!-- This contains the hidden content for the video -->
               <div style='display:none'>
                 <div id="{{ media.filename|replace('.', '')|replace(' ', '') }}">
-                  <video controls>
-                  <source src='{{ media.filename }}' {% if not settings.use_orig %}type='video/webm'{% endif %}/>
+                  <video
+                    {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}"{% endif %}
+                    {%if settings.videoplay_poster %} poster="{{ album.index_url }}{{ settings.videoplay_poster }}"{% endif %}
+                    controls>
+                  <source src='{{ media.filename }}' {% if not settings.use_orig %}type='video/webm'{% endif %} />
                   </video>
                 </div>
               </div>
