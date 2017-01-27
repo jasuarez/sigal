@@ -196,6 +196,8 @@ class Video(Media):
             self.dst_path = join(settings['destination'], path, base + ext)
         else:
             self.mime = get_mime(ext)
+        if settings['videoplay_size']:
+            self.width, self.height = settings['videoplay_size']
 
 
 class Album(UnicodeMixin):
