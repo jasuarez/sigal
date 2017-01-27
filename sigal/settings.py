@@ -74,6 +74,7 @@ _DEFAULT_CONFIG = {
     'use_orig': False,
     'video_format': 'webm',
     'video_size': (480, 360),
+    'videoplay_preload': '',
     'watermark': '',
     'webm_options': ['-crf', '10', '-b:v', '1.6M',
                      '-qmin', '4', '-qmax', '63'],

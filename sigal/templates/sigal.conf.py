@@ -151,6 +151,10 @@ ignore_files = []
 # Size of resized video (default: (480, 360))
 # video_size = (480, 360)
 
+# How videos should be preloaded when page is loaded.
+# Valid values are 'auto', 'metadata' or 'none'
+# videoplay_preload = ''
+
 # -------------
 # Miscellaneous
 # -------------

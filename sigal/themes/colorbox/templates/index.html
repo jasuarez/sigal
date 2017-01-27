@@ -83,7 +83,7 @@
         <!-- This contains the hidden content for the video -->
         <div style='display:none'>
           <div id="{{ mhash }}">
-            <video controls>
+            <video {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}" {% endif %}controls>
             <source src='{{ media.filename }}' type='{{ media.mime }}' />
             </video>
           </div>
