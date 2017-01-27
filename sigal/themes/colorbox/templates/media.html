@@ -19,7 +19,10 @@
         <img src="{{ media.filename }}" alt="{{ media_title }}" title="{{ media_title }}" />
       {% endif %}
       {% if media.type == "video" %}
-        <video {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}" {% endif %}controls>
+        <video
+          {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}"{% endif %}
+          {% if settings.videoplay_poster %} poster="{{ album.index_url }}{{ settings.videoplay_poster }}"{% endif %}
+          controls>
           <source src='{{ media.filename }}' type='video/webm' />
         </video>
       {% endif %}
