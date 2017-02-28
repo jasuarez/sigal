@@ -151,6 +151,16 @@ ignore_files = []
 # Size of resized video (default: (480, 360))
 # video_size = (480, 360)
 
+# Define the poster to be shown for the video. Default is none.
+# videoplay_poster = ''
+
+# How videos should be preloaded when page is loaded.
+# Valid values are 'auto', 'metadata' or 'none'
+# videoplay_preload = ''
+
+# Size for the videos to be displayed. Example, videoplay_size = (800, 600)
+# videoplay_size = ''
+
 # -------------
 # Miscellaneous
 # -------------

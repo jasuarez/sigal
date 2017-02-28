@@ -85,7 +85,12 @@
         <!-- This contains the hidden content for the video -->
         <div style='display:none'>
           <div id="{{ mhash }}">
-            <video controls>
+            <video
+              {% if settings.videoplay_preload %}preload="{{ settings.videoplay_preload }}"{% endif %}
+              {% if settings.videoplay_poster %} poster="{{ album.index_url }}{{ settings.videoplay_poster }}"{% endif %}
+              {% if media.width %} width="{{ media.width }}"{% endif %}
+              {% if media.height %} height="{{ media.height }}"{% endif %}              
+              controls>
             <source src='{{ media.filename }}' type='{{ media.mime }}' />
             </video>
           </div>
