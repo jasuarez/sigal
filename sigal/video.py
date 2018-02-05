@@ -64,7 +64,7 @@ def check_subprocess(cmd, source, outname):
 def video_size(source):
     """Returns the dimensions of the video."""
 
-    ret, stdout, stderr = call_subprocess(['ffmpeg', '-i', source])
+    ret, stdout, stderr = call_subprocess(['avconv', '-i', source])
     pattern = re.compile(r'Stream.*Video.* ([0-9]+)x([0-9]+)')
     match = pattern.search(stderr)
     rot_pattern = re.compile(r'rotate\s*:\s*-?(90|270)')
@@ -118,7 +118,7 @@ def generate_video(source, outname, settings, options=None):
 
     # Encoding options improved, thanks to
     # http://ffmpeg.org/trac/ffmpeg/wiki/vpxEncodingGuide
-    cmd = ['ffmpeg', '-i', source, '-y']  # -y to overwrite output files
+    cmd = ['avconv', '-i', source, '-y']  # -y to overwrite output files
     if options is not None:
         cmd += options
     cmd += resize_opt + [outname]
@@ -134,7 +134,7 @@ def generate_thumbnail(source, outname, box, delay, fit=True, options=None):
     tmpfile = outname + ".tmp.jpg"
 
     # dump an image of the video
-    cmd = ['ffmpeg', '-i', source, '-an', '-r', '1',
+    cmd = ['avconv', '-i', source, '-an', '-r', '1',
            '-ss', delay, '-vframes', '1', '-y', tmpfile]
     logger.debug('Create thumbnail for video: %s', ' '.join(cmd))
     check_subprocess(cmd, source, outname)
